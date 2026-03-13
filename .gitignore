@@ -1,0 +1,27 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+
+# --- Environnement UV / Virtuel ---
+.venv/
+.python-version
+uv.lock
+
+# --- Données (CRITIQUE) ---
+# On ne pousse généralement pas les données brutes ou volumineuses
+data/raw/
+data/processed/
+# Si vous voulez garder la structure mais pas les fichiers, 
+# vous pouvez ajouter un fichier .gitkeep dans ces dossiers.
+
+# --- Configuration & Cache ---
+.cache/
+.env
+.DS_Store
+
+# --- Notebooks ---
+# Optionnel : si vous voulez garder les résultats de vos tests persos
+# sinon, laissez-le pour suivre vos expérimentations.
