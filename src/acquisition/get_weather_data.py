@@ -63,10 +63,13 @@ retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
 openmeteo = openmeteo_requests.Client(session=retry_session)
 
 # 2. Paramètres (Marrakech, Kénitra, Agadir, Fès)
-url = "https://api.open-meteo.com/v1/forecast"
+#url = "https://api.open-meteo.com/v1/forecast"
+url = "https://archive-api.open-meteo.com/v1/archive"
 params = {
     "latitude": [31.6342, 34.261, 30.4202, 34.0331],
     "longitude": [-7.9999, -6.5802, -9.5982, -5.0003],
+    "start_date": "2024-01-01", # On remonte au début du dataset Kaggle
+    "end_date": "2024-10-31",   # Jusqu'à la fin du dataset Kaggle
     "daily": ["et0_fao_evapotranspiration", "wind_speed_10m_max", "shortwave_radiation_sum"],
     "timezone": "auto",
 }
